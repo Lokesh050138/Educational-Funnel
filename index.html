@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Funnel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .funnel-container {
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            perspective: 1000px; 
+            flex-wrap: wrap; 
+        }
+        .animated-funnel {
+            width: 100%;
+            max-width: 400px;
+            height: 300px; 
+        }
+        .funnel-stages {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+        }
+        .funnel-stage {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform: rotateX(0) rotateY(0);
+        }
+        .funnel-stage:hover {
+            transform: rotateX(-5deg) rotateY(5deg);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        .funnel-stage h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .funnel-stage p {
+            font-size: 16px;
+            color: #555;
+        }
+        .awareness {
+            background: #f9f9f9;
+            border-left: 6px solid #4CAF50;
+        }
+        .interest {
+            background: #f0f9f0;
+            border-left: 6px solid #2196F3;
+        }
+        .consideration {
+            background: #e9f7f6;
+            border-left: 6px solid #FFC107;
+        }
+        .decision {
+            background: #f9f3e9;
+            border-left: 6px solid #FF5722;
+        }
+        .enrollment {
+            background: #fef9e7;
+            border-left: 6px solid #9C27B0;
+        }
+        .retention {
+            background: #f8f5f1;
+            border-left: 6px solid #607D8B;
+        }
+        @media (max-width: 768px) {
+            .funnel-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .animated-funnel {
+                max-width: 300px;
+                height: 200px;
+            }
+            .funnel-stages {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="funnel-container">
+        <div class="animated-funnel" id="lottie-container"></div>
+        
+        <div class="funnel-stages">
+            <div class="funnel-stage awareness">
+                <h2>1. Awareness</h2>
+                <p>Get potential students to learn about your educational program or institution.</p>
+            </div>
+            <div class="funnel-stage interest">
+                <h2>2. Interest</h2>
+                <p>Engage potential students and capture their interest.</p>
+            </div>
+            <div class="funnel-stage consideration">
+                <h2>3. Consideration</h2>
+                <p>Provide detailed information to help students evaluate the program.</p>
+            </div>
+            <div class="funnel-stage decision">
+                <h2>4. Decision</h2>
+                <p>Encourage potential students to apply or enroll.</p>
+            </div>
+            <div class="funnel-stage enrollment">
+                <h2>5. Enrollment</h2>
+                <p>Ensure a smooth enrollment process and transition into the program.</p>
+            </div>
+            <div class="funnel-stage retention">
+                <h2>6. Retention</h2>
+                <p>Keep students engaged and satisfied throughout their education.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Lottie Web library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+    <script>
+        // Initialize Lottie animation
+        const lottieContainer = document.getElementById('lottie-container');
+        lottie.loadAnimation({
+            container: lottieContainer, // the DOM element
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://lottie.host/80057e6e-97b6-4078-ba58-bd1c7beb116b/RHIpBVvt8c.json' // Lottie animation URL
+        });
+    </script>
+</body>
+</html>
